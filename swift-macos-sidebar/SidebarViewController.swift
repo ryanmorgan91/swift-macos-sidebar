@@ -64,7 +64,7 @@ extension SidebarViewController: NSOutlineViewDataSource {
   
   func setRowColour(_ outlineView: NSOutlineView, _ windowFocused: Bool) {
     let rows = IndexSet(integersIn: 0..<outlineView.numberOfRows)
-    let rowViews = rows.flatMap { outlineView.rowView(atRow: $0, makeIfNecessary: false) }
+    let rowViews = rows.compactMap { outlineView.rowView(atRow: $0, makeIfNecessary: false) }
     var initialLoad = true
     
     // Iterate over each row in the outlineView
